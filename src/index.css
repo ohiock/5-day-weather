@@ -6,4 +6,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+
+  background: #06beb6;
+  background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);
+  background: linear-gradient(to right, #48b1bf, #06beb6);
 }
