@@ -9,10 +9,15 @@ import styles from './App.css';
 class App extends Component {
   render() {
     return (
-      <Grid>
-        <Row>
-          <Col mdOffset={4} md={4} styleName="app">
-            5 Day Weather
+      <Grid styleName="fill">
+        <Row styleName="fill">
+          <Col mdOffset={2} md={8} styleName="fill">
+            <div styleName="call-to-action-container">
+              <div>
+                <h1 styleName="call-to-action">Give me the weather report for</h1>
+                <input type="text" placeholder="Enter a city" />
+              </div>
+            </div>
           </Col>
         </Row>
       </Grid>
