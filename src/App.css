@@ -27,12 +27,3 @@
 
   font-size: 6.5vw;
 }
-
-.test {
-  -webkit-transition: 5s;
-  -moz-transition: 5s;
-  -o-transition: 5s;
-  transition: 5s;
-  opacity: 0;
-  visibility: hidden;
-}
