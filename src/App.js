@@ -16,4 +16,4 @@ class App extends Component {
   }
 }
 
-export default CSSModules(App, styles, { allowMultiple: true });
+export default CSSModules(App, styles);
