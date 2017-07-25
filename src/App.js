@@ -9,27 +9,36 @@ class App extends Component {
 
     this.state = {
       city: '',
+      inputError: '',
     };
 
     this.onChangeCityTextbox = this.onChangeCityTextbox.bind(this);
     this.onClickGoButton = this.onClickGoButton.bind(this);
   }
 
-  isValidCityInput(cityInput) {
-    const regExResult = /^[a-zA-Z\s]+$/.test(cityInput);
-    return cityInput && cityInput.length <= 50 && regExResult;
+  isValidInput(input) {
+    const regExResult = /^[a-zA-Z\s]+$/.test(input);
+    return input.length <= 50 && regExResult;
   }
 
   onChangeCityTextbox(event) {
-    if (!this.isValidCityInput(event.target.value)) {
-      console.log('error!');
+    const input = event.target.value.trim();
+
+    if (!this.isValidInput(input)) {
+      this.setState({ inputError: 'Please enter a valid city. It must be composed of only alphabetical letters and less than 50 chracters in length.' });
+
+      return;
     }
 
-    this.setState({ city: event.target.value });
+    this.setState({ city: input, inputError: '' });
   }
 
   onClickGoButton() {
-    console.log(this.state.city);
+    if (this.state.inputError) {
+      // prevent submission
+    }
+
+    // submit
   }
 
   render() {
@@ -37,6 +46,9 @@ class App extends Component {
       <div styleName="call-to-action-container">
         <div>
           <h1 styleName="call-to-action">Give me the weather<br /> forecast for</h1>
+          <p styleName="error-message" style={!this.state.inputError ? { display: 'none' } : {}}>
+            {this.state.inputError}
+          </p>
           <input onChange={this.onChangeCityTextbox} type="text" placeholder="Enter a city" styleName="city-textbox" />
           <button onClick={this.onClickGoButton} styleName="go-button">GO</button>
         </div>

@@ -42,3 +42,10 @@
 
   font-size: 6.5vw;
 }
+
+.error-message {
+  padding: .5vw 1vw;
+
+  background: #bf4343;
+  border-radius: 5px;
+}
