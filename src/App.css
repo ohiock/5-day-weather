@@ -11,14 +11,29 @@
   padding: 0 0 15% 0;
 }
 
-.call-to-action-container input {
+.city-textbox, .go-button {
   padding: 0 2vw;
-  width: 100%;
+  width: 80%;
 
   background: #f1f1f1;
   border: 0;
   color: #888888;
   font-size: 5.5vw;
+}
+
+.go-button {
+  width: 20%;
+
+  background: #888888;
+  color: #f1f1f1;
+}
+
+.go-button:hover {
+  background: #8f8f8f;
+}
+
+.go-button:active {
+  background: #818181;
 }
 
 .call-to-action {

@@ -8,8 +8,9 @@ class App extends Component {
     return (
       <div styleName="call-to-action-container">
         <div>
-          <h1 styleName="call-to-action">Give me the weather<br /> report for</h1>
-          <input type="text" placeholder="Enter a city" />
+          <h1 styleName="call-to-action">Give me the weather<br /> forecast for</h1>
+          <input type="text" placeholder="Enter a city" styleName="city-textbox" />
+          <button styleName="go-button">GO</button>
         </div>
       </div>
     );
