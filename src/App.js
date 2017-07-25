@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 
 import ErrorMessages from './constants/ErrorMessages';
+import WeatherService from './services/WeatherService';
 
 import styles from './App.css';
 
@@ -12,6 +13,7 @@ class App extends Component {
     this.state = {
       city: '',
       inputError: '',
+      weatherForecast: {},
     };
 
     this.onChangeCityTextbox = this.onChangeCityTextbox.bind(this);
@@ -40,7 +42,9 @@ class App extends Component {
       // prevent submission
     }
 
-    // submit
+    const weatherForecast = WeatherService.getWeatherForecast(this.state.city);
+
+    this.setState({ weatherForecast });
   }
 
   render() {
