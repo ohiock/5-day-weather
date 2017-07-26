@@ -16,3 +16,7 @@
 .show {
   animation: show .25s ease-in-out forwards;
 }
+
+.text-center {
+  text-align: center;
+}

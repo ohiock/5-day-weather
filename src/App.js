@@ -13,7 +13,6 @@ class App extends Component {
 
     this.state = {
       isCurrentlySearching: true,
-      city: '',
       weatherForecast: {},
     };
   }
@@ -21,7 +20,7 @@ class App extends Component {
   updateWeatherForecast(city) {
     const weatherForecast = WeatherService.getWeatherForecast(city);
 
-    this.setState({ isCurrentlySearching: false, city, weatherForecast });
+    this.setState({ isCurrentlySearching: false, weatherForecast });
   }
 
   render() {

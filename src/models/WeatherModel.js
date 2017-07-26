@@ -7,7 +7,7 @@ class WeatherModel {
     const rawForecast = this.api.getWeatherForecast(city);
 
     return {
-
+      city
     };
   };
 };
