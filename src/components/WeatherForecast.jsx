@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/lib/Col';
 import moment from 'moment';
 
 import ForecastHeader from './ForecastHeader';
+import ForecastIcon from './ForecastIcon';
 
 import sharedStyles from '../Shared.css';
 import styles from './WeatherForecast.css';
@@ -42,7 +43,7 @@ class WeatherForecast extends Component {
                         weekDay={moment.unix(day.date).format('dddd')}
                         today={moment().format('dddd')}
                         tomorrow={moment().add(1, 'days').format('dddd')} />
-                      <div styleName="text-center icon">{ day.icon }</div>
+                      <div styleName="text-center icon"><ForecastIcon icon={day.icon} /></div>
                       <div styleName="temp">{ `${Math.round(day.temp)}°` }</div>
                       <div styleName="condition">{ day.condition }</div>
                       <div styleName="description">{ day.description }</div>
