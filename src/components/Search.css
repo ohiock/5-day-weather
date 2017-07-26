@@ -1,0 +1,44 @@
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+.container div {
+  padding: 0 0 15% 0;
+}
+
+.city-textbox, .go-button {
+  padding: 0 2vw;
+  width: 80%;
+
+  background: #f1f1f1;
+  border: 0;
+  color: #888888;
+  font-size: 5.5vw;
+}
+
+.go-button {
+  width: 20%;
+
+  background: #888888;
+  color: #f1f1f1;
+}
+
+.go-button:hover {
+  background: #8f8f8f;
+}
+
+.go-button:active {
+  background: #818181;
+}
+
+.call-to-action {
+  line-height: 1.15;
+  margin-bottom: 2vw;
+
+  font-size: 6.5vw;
+}
