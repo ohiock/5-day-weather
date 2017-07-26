@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 
+import Config from './constants/Config';
 import ErrorMessages from './constants/ErrorMessages';
 import WeatherService from './services/WeatherService';
 
@@ -23,8 +24,8 @@ class App extends Component {
   }
 
   isValidInput(input) {
-    const regExResult = /^[a-zA-Z\s]+$/.test(input);
-    return input.length <= 50 && regExResult;
+    const regExResult = Config.CITY_INPUT_REGEX.test(input);
+    return input.length <= Config.CITY_INPUT_CHARACTER_LENGTH && regExResult;
   }
 
   onChangeCityTextbox(event) {
@@ -41,7 +42,7 @@ class App extends Component {
 
   onClickGoButton() {
     if (this.state.inputError) {
-      // prevent submission
+      return;
     }
 
     const weatherForecast = WeatherService.getWeatherForecast(this.state.city);
