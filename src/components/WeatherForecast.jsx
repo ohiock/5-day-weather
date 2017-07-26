@@ -15,6 +15,7 @@ import styles from './WeatherForecast.css';
 const propTypes = {
   show: PropTypes.bool.isRequired,
   weatherForecast: PropTypes.object.isRequired,
+  goBackCallback: PropTypes.func.isRequired,
 };
 
 class WeatherForecast extends Component {
@@ -28,11 +29,11 @@ class WeatherForecast extends Component {
 
   render() {
     return (
-      <Grid styleName={this.props.show ? 'show' : 'hide'}>
+      <Grid fluid styleName={this.props.show ? 'show' : 'hide'}>
         <Row>
           <Col>
             <div styleName="text-center">
-              <h1 styleName="forecast-title">5 Day Weather Forecast for {this.props.weatherForecast.city}</h1>
+              <h1 styleName="forecast-title">5 Day Weather Forecast<br /> for {this.props.weatherForecast.city}</h1>
             </div>
             <Row>
               {
@@ -46,11 +47,18 @@ class WeatherForecast extends Component {
                       <div styleName="text-center icon"><ForecastIcon icon={day.icon} /></div>
                       <div styleName="temp">{ `${Math.round(day.temp)}°` }</div>
                       <div styleName="condition">{ day.condition }</div>
-                      <div styleName="description">{ day.description }</div>
+                      <div>{ day.description }</div>
                     </Col>
                   ))
               }
             </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div styleName="go-back-container text-center" onClick={this.props.goBackCallback}>
+              <span styleName="go-back-button">Search Again</span>
+            </div>
           </Col>
         </Row>
       </Grid>

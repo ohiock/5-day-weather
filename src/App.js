@@ -21,6 +21,8 @@ class App extends Component {
         days: [],
       },
     };
+
+    this.searchAgain = this.searchAgain.bind(this);
   }
 
   updateWeatherForecast(city, openWeatherAPI) {
@@ -44,11 +46,15 @@ class App extends Component {
       });
   }
 
+  searchAgain() {
+    this.setState({ isCurrentlySearching: true });
+  }
+
   render() {
     return (
       <div styleName="fill">
         <Search searchCallback={city => this.updateWeatherForecast(city, OpenWeatherAPI)} show={this.state.isCurrentlySearching} />
-        <WeatherForecast weatherForecast={this.state.weatherForecast} show={!this.state.isCurrentlySearching} />
+        <WeatherForecast weatherForecast={this.state.weatherForecast} goBackCallback={this.searchAgain} show={!this.state.isCurrentlySearching} />
       </div>
     );
   }
