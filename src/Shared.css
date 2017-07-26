@@ -1,11 +1,18 @@
-.hide {
-  opacity: 0;
+@keyframes hide {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+  100% { position: absolute; left: -100vw; }
+}
 
-  transition: opacity .25s ease-in-out;
+@keyframes show {
+  0% { position: static; opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.hide {
+  animation: hide .25s ease-in-out forwards;
 }
 
 .show {
-  opacity: 1;
-
-  transition: opacity .25s ease-in-out;
+  animation: show .25s ease-in-out forwards;
 }

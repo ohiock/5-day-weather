@@ -10,6 +10,7 @@ import sharedStyles from '../Shared.css';
 import styles from './Search.css';
 
 const propTypes = {
+  show: PropTypes.bool.isRequired,
   searchCallback: PropTypes.func.isRequired,
 };
 
