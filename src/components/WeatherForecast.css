@@ -1,3 +1,37 @@
-.weather-forecast-title {
-  font-size: 4vw;
+.forecast-title {
+  font-size: 4.5vw;
+}
+
+.forecast-day {
+  padding: 1.5vw;
+}
+
+.icon {
+  margin: 0 0 1vw 0;
+}
+
+.temp {
+  margin: 0 0 1vw 0;
+
+  font-size: 3vw;
+}
+
+.condition {
+  font-weight: bold;
+}
+
+.description {
+
+}
+
+.background-0 {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.background-1 {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.background-2, .background-3, .background-4  {
+  background: rgba(0, 0, 0, 0.3);
 }

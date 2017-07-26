@@ -29,18 +29,23 @@ class WeatherForecast extends Component {
     return (
       <Grid styleName={this.props.show ? 'show' : 'hide'}>
         <Row>
-          <Col styleName="text-center">
-            <h1 styleName="weather-forecast-title">5 Day Weather Forecast for {this.props.weatherForecast.city}</h1>
+          <Col>
+            <div styleName="text-center">
+              <h1 styleName="forecast-title">5 Day Weather Forecast for {this.props.weatherForecast.city}</h1>
+            </div>
             <Row>
               {
                 this.props.weatherForecast.days
-                  .map(day => (
-                    <Col md={2} key={day.date}>
+                  .map((day, i) => (
+                    <Col mdOffset={i === 0 ? 1 : 0} md={2} key={day.date} styleName={`forecast-day background-${i}`}>
                       <ForecastHeader
                         weekDay={moment.unix(day.date).format('dddd')}
                         today={moment().format('dddd')}
                         tomorrow={moment().add(1, 'days').format('dddd')} />
-                      { `${day.temp}°` }
+                      <div styleName="text-center icon">{ day.icon }</div>
+                      <div styleName="temp">{ `${Math.round(day.temp)}°` }</div>
+                      <div styleName="condition">{ day.condition }</div>
+                      <div styleName="description">{ day.description }</div>
                     </Col>
                   ))
               }
@@ -54,4 +59,4 @@ class WeatherForecast extends Component {
 
 WeatherForecast.propTypes = propTypes;
 
-export default CSSModules(WeatherForecast, Object.assign(sharedStyles, styles));
+export default CSSModules(WeatherForecast, Object.assign(sharedStyles, styles), { allowMultiple: true });

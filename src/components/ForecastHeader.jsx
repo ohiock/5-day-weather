@@ -1,5 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import CSSModules from 'react-css-modules';
+
+import sharedStyles from '../Shared.css';
+import styles from './ForecastHeader.css';
 
 const propTypes = {
   weekDay: PropTypes.string.isRequired,
@@ -8,16 +12,26 @@ const propTypes = {
 };
 
 const ForecastHeader = (props) => {
+  let header;
+
   switch (props.weekDay) {
     case props.today:
-      return (<h2>Today</h2>);
+      header = 'Today';
+      break;
     case props.tomorrow:
-      return (<h2>Tomorrow</h2>);
+      header = 'Tomorrow';
+      break;
     default:
-      return (<h2>{props.weekDay}</h2>);
+      header = props.weekDay;
   }
+
+  return (
+    <div styleName="text-center">
+      <h2 styleName="day-header">{header}</h2>
+    </div>
+  );
 }
 
 ForecastHeader.propTypes = propTypes;
 
-export default ForecastHeader;
+export default CSSModules(ForecastHeader, Object.assign(sharedStyles, styles));
