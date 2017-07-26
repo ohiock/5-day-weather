@@ -8,6 +8,7 @@ class WeatherForecastModel {
 
     rawForecast.list.forEach(item => {
       this.days.push({
+        date: item.dt || Config.DATA_NOT_AVAILABLE,
         temp: (item.temp && item.temp.day) || Config.DATA_NOT_AVAILABLE,
         condition: (item.weather[0] && item.weather[0].main) || Config.DATA_NOT_AVAILABLE,
         description: (item.weather[0] && item.weather[0].description) || Config.DATA_NOT_AVAILABLE,

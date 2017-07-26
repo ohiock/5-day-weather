@@ -4,6 +4,9 @@ import CSSModules from 'react-css-modules';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import moment from 'moment';
+
+import ForecastHeader from './ForecastHeader';
 
 import sharedStyles from '../Shared.css';
 import styles from './WeatherForecast.css';
@@ -29,14 +32,18 @@ class WeatherForecast extends Component {
           <Col styleName="text-center">
             <h1 styleName="weather-forecast-title">5 Day Weather Forecast for {this.props.weatherForecast.city}</h1>
             <Row>
-              <Col md={2}>
-                <h2>Today</h2>
-                {this.props.weatherForecast.days[0] && this.props.weatherForecast.days[0].temp}
-              </Col>
-              <Col md={2}>Tomorrow</Col>
-              <Col md={2}>Three</Col>
-              <Col md={2}>Four</Col>
-              <Col md={2}>Five</Col>
+              {
+                this.props.weatherForecast.days
+                  .map(day => (
+                    <Col md={2} key={day.date}>
+                      <ForecastHeader
+                        weekDay={moment.unix(day.date).format('dddd')}
+                        today={moment().format('dddd')}
+                        tomorrow={moment().add(1, 'days').format('dddd')} />
+                      { `${day.temp}°` }
+                    </Col>
+                  ))
+              }
             </Row>
           </Col>
         </Row>
