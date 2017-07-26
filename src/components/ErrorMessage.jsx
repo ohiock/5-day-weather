@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import CSSModules from 'react-css-modules';
 
+import sharedStyles from '../Shared.css';
 import styles from './ErrorMessage.css';
 
 const propTypes = {
@@ -19,4 +20,4 @@ const ErrorMessage = (props) => {
 
 ErrorMessage.propTypes = propTypes;
 
-export default CSSModules(ErrorMessage, styles, { allowMultiple: true });
+export default CSSModules(ErrorMessage, Object.assign(sharedStyles, styles), { allowMultiple: true });

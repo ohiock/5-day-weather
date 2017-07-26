@@ -42,3 +42,27 @@
 .go-back-button {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .forecast-title {
+    font-size: 7.5vw;
+  }
+
+  .forecast-day {
+    padding: 3vw;
+
+    font-size: 4vw;
+  }
+
+  .temp {
+    margin: 0 0 2vw 0;
+
+    font-size: 6vw;
+  }
+
+  .go-back-container {
+    padding: 4vw;
+
+    font-size: 6vw;
+  }
+}

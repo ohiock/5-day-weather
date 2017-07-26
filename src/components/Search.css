@@ -42,3 +42,9 @@
 
   font-size: 6.5vw;
 }
+
+@media (max-width: 768px) {
+  .city-textbox, .go-button {
+    padding: 1.5vw 3.5vw;
+  }
+}

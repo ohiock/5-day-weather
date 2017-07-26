@@ -31,7 +31,7 @@ class WeatherForecast extends Component {
     return (
       <Grid fluid styleName={this.props.show ? 'show' : 'hide'}>
         <Row>
-          <Col>
+          <Col lg={12}>
             <div styleName="text-center">
               <h1 styleName="forecast-title">5 Day Weather Forecast<br /> for {this.props.weatherForecast.city}</h1>
             </div>
