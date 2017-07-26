@@ -6,6 +6,7 @@ import Config from '../constants/Config';
 import ErrorMessages from '../constants/ErrorMessages';
 import ErrorMessage from './ErrorMessage';
 
+import sharedStyles from '../Shared.css';
 import styles from './Search.css';
 
 const propTypes = {
@@ -43,7 +44,7 @@ class Search extends Component {
   }
 
   onClickGoButton() {
-    if (this.state.inputError) {
+    if (this.state.inputError || !this.isValidInput(this.state.city)) {
       return;
     }
 
@@ -52,7 +53,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div styleName="container">
+      <div styleName={`container ${this.props.show ? 'show' : 'hide'}`}>
         <div>
           <h1 styleName="call-to-action">Give me the weather<br /> forecast for</h1>
           <ErrorMessage show={!!this.state.inputError} errorMessage={this.state.inputError} />
@@ -66,4 +67,4 @@ class Search extends Component {
 
 Search.propTypes = propTypes;
 
-export default CSSModules(Search, styles);
+export default CSSModules(Search, Object.assign(sharedStyles, styles), { allowMultiple: true });

@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 
 import WeatherService from './services/WeatherService';
 import Search from './components/Search';
-import Forecast from './components/Forecast';
+import WeatherForecast from './components/WeatherForecast';
 
 import styles from './App.css';
 
@@ -21,14 +21,14 @@ class App extends Component {
   updateWeatherForecast(city) {
     const weatherForecast = WeatherService.getWeatherForecast(city);
 
-    this.setState({ city, weatherForecast });
+    this.setState({ isCurrentlySearching: false, city, weatherForecast });
   }
 
   render() {
     return (
-      <div>
-        { this.state.isCurrentlySearching && <Search searchCallback={city => this.updateWeatherForecast(city)} /> }
-        { !this.state.isCurrentlySearching && <Forecast />}
+      <div styleName="fill">
+        <Search searchCallback={city => this.updateWeatherForecast(city)} show={this.state.isCurrentlySearching} />
+        <WeatherForecast weatherForecast={this.state.weatherForecast} show={!this.state.isCurrentlySearching} />
       </div>
     );
   }
