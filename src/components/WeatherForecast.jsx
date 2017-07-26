@@ -29,7 +29,10 @@ class WeatherForecast extends Component {
           <Col styleName="text-center">
             <h1 styleName="weather-forecast-title">5 Day Weather Forecast for {this.props.weatherForecast.city}</h1>
             <Row>
-              <Col md={2}>Today</Col>
+              <Col md={2}>
+                <h2>Today</h2>
+                {this.props.weatherForecast.days[0] && this.props.weatherForecast.days[0].temp}
+              </Col>
               <Col md={2}>Tomorrow</Col>
               <Col md={2}>Three</Col>
               <Col md={2}>Four</Col>
