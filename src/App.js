@@ -4,6 +4,8 @@ import CSSModules from 'react-css-modules';
 import ErrorMessages from './constants/ErrorMessages';
 import WeatherService from './services/WeatherService';
 
+import ErrorMessage from './components/ErrorMessage';
+
 import styles from './App.css';
 
 class App extends Component {
@@ -52,9 +54,7 @@ class App extends Component {
       <div styleName="call-to-action-container">
         <div>
           <h1 styleName="call-to-action">Give me the weather<br /> forecast for</h1>
-          <p styleName="error-message" style={!this.state.inputError ? { display: 'none' } : {}}>
-            {this.state.inputError}
-          </p>
+          <ErrorMessage show={!!this.state.inputError} errorMessage={this.state.inputError} />
           <input onChange={this.onChangeCityTextbox} type="text" placeholder="Enter a city" styleName="city-textbox" />
           <button onClick={this.onClickGoButton} styleName="go-button">GO</button>
         </div>

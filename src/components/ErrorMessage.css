@@ -1,0 +1,16 @@
+.error-message {
+  padding: .5vw 1vw;
+
+  background: #bf4343;
+  border-radius: 5px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+
+  transition: opacity .25s ease-in;
+}
