@@ -65,6 +65,9 @@ Generally I'll use rem's for most of my sizing, but I decided to experiment with
 The major testing that I wanted to execute was around the API and logic that touched that data. Outside of that, I put in some snapshots of the components that I created.
 
 
+#### Browser Testing
+I developed this primarily in Chrome, but I did check through FireFox, IE 10, and Edge. There are some slight differences there, and a few things that I would have liked to clean up better with more time, but didn't consider them show stoppers.
+
 
 ## Tradeoffs
 I don't think that there were many tradeoffs that I had to consider. I suppose that once I went down the create-react-app path, it limited me in some regards.
