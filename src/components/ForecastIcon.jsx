@@ -1,13 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-import clear from '../images/1.svg';
-import fewClouds from '../images/2.svg';
-import scatteredClouds from '../images/3.svg';
-import showers from '../images/4.svg';
-import rain from '../images/5.svg';
-import storms from '../images/6.svg';
-import mist from '../images/7.svg';
+import sun from '../images/sun.svg';
+import fullMoon from '../images/full-moon.svg';
+import cloudySun from '../images/cloudy.svg';
+import cloudyMoon from '../images/cloudy-night.svg';
+import cloud from '../images/cloud.svg';
+import cloudy from '../images/cloudy-1.svg';
+import rain from '../images/rain-1.svg';
+import rainySun from '../images/rainy.svg';
+import rainyMoon from '../images/rainy-1.svg';
+import storms from '../images/rainy.svg';
+import snow from '../images/snowflake.svg';
+import mist from '../images/wind.svg';
 
 const propTypes = {
   icon: PropTypes.string.isRequired,
@@ -15,31 +20,31 @@ const propTypes = {
 
 const ForecastIcon = (props) => {
   const iconImages = {
-    '01d': clear,
-    '01n': clear,
-    '02d': fewClouds,
-    '02n': fewClouds,
-    '03d': scatteredClouds,
-    '03n': scatteredClouds,
-    '04d': scatteredClouds,
-    '04n': scatteredClouds,
-    '09d': showers,
-    '09n': showers,
-    '10d': rain,
-    '10n': rain,
+    '01d': sun,
+    '01n': fullMoon,
+    '02d': cloudySun,
+    '02n': cloudyMoon,
+    '03d': cloud,
+    '03n': cloud,
+    '04d': cloudy,
+    '04n': cloudy,
+    '09d': rain,
+    '09n': rain,
+    '10d': rainySun,
+    '10n': rainyMoon,
     '11d': storms,
     '11n': storms,
-    '13d': showers,
-    '13n': showers,
+    '13d': snow,
+    '13n': snow,
     '50d': mist,
     '50n': mist,
   };
 
   return (
-    <div><img alt="weather icon" src={iconImages[props.icon]} /></div>
+    <div><img styleName="icon" alt="weather icon" src={iconImages[props.icon]} /></div>
   )
 }
 
 ForecastIcon.propTypes = propTypes;
 
-export default ForecastIcon
+export default ForecastIcon;
