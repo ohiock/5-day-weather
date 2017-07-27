@@ -7,7 +7,6 @@ A weather app built with React
 Install dependencies:
 ```
 npm install
-
 ```
 
 Fire it up:
