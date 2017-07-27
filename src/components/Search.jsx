@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
 
 import Config from '../constants/Config';
 import ErrorMessages from '../constants/ErrorMessages';
@@ -67,12 +66,12 @@ class Search extends Component {
 
   render() {
     return (
-      <div styleName={`container ${this.props.show ? 'show' : 'hide'}`}>
+      <div className={`${styles.container} ${this.props.show ? sharedStyles.show : sharedStyles.hide}`}>
         <div>
-          <h1 styleName="call-to-action">Give me the<br /> weather forecast for</h1>
+          <h1 className={styles.callToAction}>Give me the<br /> weather forecast for</h1>
           <ErrorMessage show={this.state.inputError || this.props.searchError} errorMessage={this.props.searchError ? ErrorMessages.SEARCH_ERROR : ErrorMessages.INVALID_CITY_INPUT} />
-          <input onChange={this.onChangeCityTextbox} onKeyPress={this.onKeyPressGoButton} type="text" placeholder="Enter a city" styleName="city-textbox" />
-          <button onClick={this.onClickGoButton} styleName="go-button">GO</button>
+          <input onChange={this.onChangeCityTextbox} onKeyPress={this.onKeyPressGoButton} type="text" placeholder="Enter a city" className={styles.cityTextbox} />
+          <button onClick={this.onClickGoButton} className={styles.goButton}>GO</button>
         </div>
       </div>
     );
@@ -81,4 +80,4 @@ class Search extends Component {
 
 Search.propTypes = propTypes;
 
-export default CSSModules(Search, Object.assign(sharedStyles, styles), { allowMultiple: true });
+export default Search;

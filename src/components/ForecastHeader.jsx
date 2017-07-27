@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
 
 import sharedStyles from '../Shared.css';
 import styles from './ForecastHeader.css';
@@ -26,12 +25,12 @@ const ForecastHeader = (props) => {
   }
 
   return (
-    <div styleName="text-center">
-      <h2 styleName="day-header">{header}</h2>
+    <div className={sharedStyles.textCenter}>
+      <h2 className={styles.dayHeader}>{header}</h2>
     </div>
   );
 }
 
 ForecastHeader.propTypes = propTypes;
 
-export default CSSModules(ForecastHeader, Object.assign(sharedStyles, styles));
+export default ForecastHeader;

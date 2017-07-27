@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CSSModules from 'react-css-modules';
 
 import OpenWeatherAPI from './api/OpenWeatherAPI';
 import WeatherModel from './models/WeatherForecastModel';
@@ -46,7 +45,7 @@ class App extends Component {
 
   render() {
     return (
-      <div styleName="fill">
+      <div className={styles.fill}>
         <Search searchCallback={city => this.updateWeatherForecast(city, OpenWeatherAPI)} searchError={this.state.searchError} show={this.state.isCurrentlySearching} />
         <WeatherForecast weatherForecast={this.state.weatherForecast} goBackCallback={this.searchAgain} show={!this.state.isCurrentlySearching} />
       </div>
@@ -54,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default CSSModules(App, styles);
+export default App;

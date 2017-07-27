@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import CSSModules from 'react-css-modules';
 
 import sharedStyles from '../Shared.css';
 import styles from './ErrorMessage.css';
@@ -12,7 +11,7 @@ const propTypes = {
 
 const ErrorMessage = (props) => {
   return (
-    <p styleName={`error-message ${props.show ? 'show' : 'hide'}`} >
+    <p className={`${styles.errorMessage} ${props.show ? sharedStyles.show : sharedStyles.hide}`} >
       {props.errorMessage}
     </p>
   );
@@ -20,4 +19,4 @@ const ErrorMessage = (props) => {
 
 ErrorMessage.propTypes = propTypes;
 
-export default CSSModules(ErrorMessage, Object.assign(sharedStyles, styles), { allowMultiple: true });
+export default ErrorMessage;

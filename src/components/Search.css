@@ -11,7 +11,7 @@
   padding: 0 0 15% 0;
 }
 
-.city-textbox, .go-button {
+.cityTextbox, .goButton {
   padding: 0 2vw;
   width: 80%;
 
@@ -21,22 +21,22 @@
   font-size: 5.5vw;
 }
 
-.go-button {
+.goButton {
   width: 20%;
 
   background: #888888;
   color: #f1f1f1;
 }
 
-.go-button:hover {
+.goButton:hover {
   background: #8f8f8f;
 }
 
-.go-button:active {
+.goButton:active {
   background: #818181;
 }
 
-.call-to-action {
+.callToAction {
   line-height: 1.15;
   margin-bottom: 2vw;
 
@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 768px) {
-  .city-textbox, .go-button {
+  .cityTextbox, .goButton {
     padding: 1.5vw 3.5vw;
   }
 }

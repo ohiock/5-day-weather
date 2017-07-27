@@ -1,8 +1,8 @@
-.forecast-title {
+.forecastTitle {
   font-size: 4.5vw;
 }
 
-.forecast-day {
+.forecastDay {
   padding: 1.5vw;
 }
 
@@ -20,43 +20,43 @@
   font-weight: bold;
 }
 
-.background-0 {
+.background0 {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.background-1 {
+.background1 {
   background: rgba(0, 0, 0, 0.15);
 }
 
-.background-2 {
+.background2 {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.background-3 {
+.background3 {
   background: rgba(0, 0, 0, 0.25);
 }
 
-.background-4 {
+.background4 {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.go-back-container {
+.goBackContainer {
   padding: 2vw;
 
   font-size: 2vw;
   font-weight: bold;
 }
 
-.go-back-button {
+.goBackButton {
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .forecast-title {
+  .forecastTitle {
     font-size: 7.5vw;
   }
 
-  .forecast-day {
+  .forecastDay {
     padding: 3vw;
 
     font-size: 4vw;
@@ -68,7 +68,7 @@
     font-size: 6vw;
   }
 
-  .go-back-container {
+  .goBackContainer {
     padding: 4vw;
 
     font-size: 6vw;
