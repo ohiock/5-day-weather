@@ -67,10 +67,13 @@ The major testing that I wanted to execute was around the API and logic that tou
 
 
 ## Tradeoffs
-I don't think that there were any major tradeoffs that I had to consider. I suppose that once I went down the create-react-app path, it limited me in some regards.
+I don't think that there were many tradeoffs that I had to consider. I suppose that once I went down the create-react-app path, it limited me in some regards.
 
 I obviously had complete control over the configuration once I ejected the app, but there is a lot there that can become tedious to step away from if you decide to go a different direction.
 
+
+#### The Proxy
+Once I finished the application and deployed it, I realized that I needed to find some way to hit the API from HTTPS. I settled on a free proxy that I found, which is obviously not something I would do with a production application. Had I more time, I would have stood up a server that would have essentially done the same thing, instead of relying on GitHub for hosting.
 
 
 ## Additional Development
