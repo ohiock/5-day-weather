@@ -36,8 +36,6 @@ class App extends Component {
         this.setState({ isCurrentlySearching: false, weatherForecast: weatherModel, searchError: false });
       })
       .catch((error) => {
-        console.log(error);
-
         this.setState({ searchError: true });
       });
   }
