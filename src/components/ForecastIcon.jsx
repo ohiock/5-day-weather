@@ -41,7 +41,7 @@ const ForecastIcon = (props) => {
   };
 
   return (
-    <div><img styleName="icon" alt="weather icon" src={iconImages[props.icon]} /></div>
+    <div><img alt="weather icon" src={iconImages[props.icon]} /></div>
   )
 }
 

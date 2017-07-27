@@ -5,6 +5,7 @@ const Config = {
   CITY_INPUT_REGEX: /^[a-zA-Z\s]+$/,
   CITY_INPUT_CHARACTER_LENGTH: 50,
   DATA_NOT_AVAILABLE: 'N/A',
+  ENTER_KEY: 'Enter',
 };
 
 export default Config;

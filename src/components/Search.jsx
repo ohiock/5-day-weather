@@ -20,11 +20,12 @@ class Search extends Component {
 
     this.state = {
       city: '',
-      inputError: '',
+      inputError: false,
     };
 
     this.onChangeCityTextbox = this.onChangeCityTextbox.bind(this);
     this.onClickGoButton = this.onClickGoButton.bind(this);
+    this.onKeyPressGoButton = this.onKeyPressGoButton.bind(this);
   }
 
   isValidInput(input) {
@@ -36,15 +37,15 @@ class Search extends Component {
     const input = event.target.value.trim();
 
     if (!this.isValidInput(input)) {
-      this.setState({ inputError: ErrorMessages.INVALID_CITY_INPUT });
+      this.setState({ inputError: true });
 
       return;
     }
 
-    this.setState({ city: input, inputError: '' });
+    this.setState({ city: input, inputError: false });
   }
 
-  onClickGoButton() {
+  goSearch() {
     if (this.state.inputError || !this.isValidInput(this.state.city)) {
       return;
     }
@@ -52,13 +53,25 @@ class Search extends Component {
     this.props.searchCallback(this.state.city);
   }
 
+  onClickGoButton() {
+    this.goSearch();
+  }
+
+  onKeyPressGoButton(event) {
+    if (event.key !== Config.ENTER_KEY) {
+      return;
+    }
+
+    this.goSearch();
+  }
+
   render() {
     return (
       <div styleName={`container ${this.props.show ? 'show' : 'hide'}`}>
         <div>
           <h1 styleName="call-to-action">Give me the<br /> weather forecast for</h1>
-          <ErrorMessage show={!!this.state.inputError} errorMessage={this.state.inputError} />
-          <input onChange={this.onChangeCityTextbox} type="text" placeholder="Enter a city" styleName="city-textbox" />
+          <ErrorMessage show={this.state.inputError} errorMessage={ErrorMessages.INVALID_CITY_INPUT} />
+          <input onChange={this.onChangeCityTextbox} onKeyPress={this.onKeyPressGoButton} type="text" placeholder="Enter a city" styleName="city-textbox" />
           <button onClick={this.onClickGoButton} styleName="go-button">GO</button>
         </div>
       </div>
