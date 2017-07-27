@@ -39,7 +39,7 @@ class WeatherForecast extends Component {
               {
                 this.props.weatherForecast.days
                   .map((day, i) => (
-                    <Col mdOffset={i === 0 ? 1 : 0} md={2} key={day.date} styleName={`forecast-day background-${i}`}>
+                    <Col xs={6} mdOffset={i === 0 ? 1 : 0} md={2} key={day.date} styleName={`forecast-day background-${i}`}>
                       <ForecastHeader
                         weekDay={moment.unix(day.date).format('dddd')}
                         today={moment().format('dddd')}
