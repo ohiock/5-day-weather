@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
-import moment from 'moment';
 
 import OpenWeatherAPI from './api/OpenWeatherAPI';
 import WeatherModel from './models/WeatherForecastModel';
@@ -33,9 +32,6 @@ class App extends Component {
         }
 
         const weatherModel = new WeatherModel(response.data);
-        weatherModel.days = weatherModel.days
-          .filter(day => moment.unix(day.date).isSameOrAfter(moment()))
-          .slice(0, 5);
 
         this.setState({ isCurrentlySearching: false, weatherForecast: weatherModel });
       })
