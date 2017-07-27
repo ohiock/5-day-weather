@@ -33,12 +33,12 @@ class App extends Component {
 
         const weatherModel = new WeatherModel(response.data);
 
-        this.setState({ isCurrentlySearching: false, weatherForecast: weatherModel });
+        this.setState({ isCurrentlySearching: false, weatherForecast: weatherModel, searchError: false });
       })
       .catch((error) => {
         console.log(error);
 
-        this.setState({ isCurrentlySearching: false, searchError: true });
+        this.setState({ searchError: true });
       });
   }
 
@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div styleName="fill">
-        <Search searchCallback={city => this.updateWeatherForecast(city, OpenWeatherAPI)} show={this.state.isCurrentlySearching} />
+        <Search searchCallback={city => this.updateWeatherForecast(city, OpenWeatherAPI)} searchError={this.state.searchError} show={this.state.isCurrentlySearching} />
         <WeatherForecast weatherForecast={this.state.weatherForecast} goBackCallback={this.searchAgain} show={!this.state.isCurrentlySearching} />
       </div>
     );

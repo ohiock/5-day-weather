@@ -19,14 +19,6 @@ const propTypes = {
 };
 
 class WeatherForecast extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
-  }
-
   render() {
     return (
       <Grid fluid styleName={this.props.show ? 'show' : 'hide'}>
@@ -45,7 +37,7 @@ class WeatherForecast extends Component {
                         today={moment().format('dddd')}
                         tomorrow={moment().add(1, 'days').format('dddd')} />
                       <div styleName="text-center icon"><ForecastIcon icon={day.icon} /></div>
-                      <div styleName="temp">{ `${Math.round(day.temp)}°` }</div>
+                      <div styleName="temp">{ `${day.temp}°` }</div>
                       <div styleName="condition">{ day.condition }</div>
                       <div>{ day.description }</div>
                     </Col>

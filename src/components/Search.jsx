@@ -70,7 +70,7 @@ class Search extends Component {
       <div styleName={`container ${this.props.show ? 'show' : 'hide'}`}>
         <div>
           <h1 styleName="call-to-action">Give me the<br /> weather forecast for</h1>
-          <ErrorMessage show={this.state.inputError} errorMessage={ErrorMessages.INVALID_CITY_INPUT} />
+          <ErrorMessage show={this.state.inputError || this.props.searchError} errorMessage={this.props.searchError ? ErrorMessages.SEARCH_ERROR : ErrorMessages.INVALID_CITY_INPUT} />
           <input onChange={this.onChangeCityTextbox} onKeyPress={this.onKeyPressGoButton} type="text" placeholder="Enter a city" styleName="city-textbox" />
           <button onClick={this.onClickGoButton} styleName="go-button">GO</button>
         </div>
