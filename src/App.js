@@ -33,6 +33,8 @@ class App extends Component {
         const weatherModel = new WeatherModel(response.data);
 
         this.setState({ isCurrentlySearching: false, weatherForecast: weatherModel, searchError: false });
+
+        return Promise.resolve(true);
       })
       .catch((error) => {
         this.setState({ searchError: true });

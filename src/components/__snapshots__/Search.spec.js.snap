@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="undefined undefined"
+>
+  <div>
+    <h1
+      className={undefined}
+    >
+      Give me the
+      <br />
+       weather forecast for
+    </h1>
+    <p
+      className="undefined undefined"
+    >
+      Please enter a valid city. It must be composed of only alphabetical letters and less than 50 chracters in length.
+    </p>
+    <input
+      className={undefined}
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Enter a city"
+      type="text"
+    />
+    <button
+      className={undefined}
+      onClick={[Function]}
+    >
+      GO
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-12"
+    >
+      <div
+        className={undefined}
+      >
+        <h1
+          className={undefined}
+        >
+          5 Day Weather Forecast
+          <br />
+           for 
+          
+        </h1>
+      </div>
+      <div
+        className="row"
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className=""
+    >
+      <div
+        className="undefined undefined"
+        onClick={[Function]}
+      >
+        <span
+          className={undefined}
+        >
+          Search Again
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className="undefined undefined"
+  >
+    <div>
+      <h1
+        className={undefined}
+      >
+        Give me the
+        <br />
+         weather forecast for
+      </h1>
+      <p
+        className="undefined undefined"
+      >
+        Please enter a valid city. It must be composed of only alphabetical letters and less than 50 chracters in length.
+      </p>
+      <input
+        className={undefined}
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Enter a city"
+        type="text"
+      />
+      <button
+        className={undefined}
+        onClick={[Function]}
+      >
+        GO
+      </button>
+    </div>
+  </div>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-12"
+      >
+        <div
+          className={undefined}
+        >
+          <h1
+            className={undefined}
+          >
+            5 Day Weather Forecast
+            <br />
+             for 
+            
+          </h1>
+        </div>
+        <div
+          className="row"
+        />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className=""
+      >
+        <div
+          className="undefined undefined"
+          onClick={[Function]}
+        >
+          <span
+            className={undefined}
+          >
+            Search Again
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
