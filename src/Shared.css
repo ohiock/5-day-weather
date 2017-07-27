@@ -20,3 +20,23 @@
 .textCenter {
   text-align: center;
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: block !important;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: block !important;
+  }
+}
