@@ -6,7 +6,7 @@ const Config = {
   CITY_INPUT_CHARACTER_LENGTH: 50,
   DATA_NOT_AVAILABLE: 'N/A',
   ENTER_KEY: 'Enter',
-  ENVIRONMENT_PODUCTION: 'production',
+  ENVIRONMENT_PRODUCTION: 'production',
   PROXY_URL: 'https://cors-anywhere.herokuapp.com/',
 };
 
